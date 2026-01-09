@@ -2,8 +2,8 @@ version: "3.9"
 
 services:
   db:
-    image: postgres:16
-    container_name: odoo19-db
+    image: postgres:9.6
+    container_name: odoo10-db
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: odoo
@@ -11,20 +11,20 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
     ports:
-      - "5434:5432"
+      - "5432:5432"
     restart: unless-stopped
 
   odoo:
-    image: odoo:19.0
-    container_name: odoo19
+    image: odoo:10.0
+    container_name: odoo10
     depends_on:
       - db
     ports:
       - "8069:8069"
     volumes:
-      - ./odoo.conf:/etc/odoo/odoo.conf
+      - ./odoo.conf:/etc/odoo/odoo.conf:ro
       - ./addons:/mnt/extra-addons
-      - ./filestore:/var/lib/odoo
+      - ./odoo-data:/var/lib/odoo
     environment:
       - HOST=db
       - USER=odoo
@@ -33,3 +33,4 @@ services:
 
 volumes:
   pg_data:
+  odoo-data:
