@@ -12,3 +12,13 @@ git clone https://github.com/falconsoft3d/docker-odoo-10.git
 cd docker-odoo-10
 docker-compose up -d
 ```
+
+Reiniciamos el Docker
+```
+docker-compose restart odoo10
+```
+
+Vemos los logs de Odoo
+```
+docker-compose logs -f odoo10
+```
