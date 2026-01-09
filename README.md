@@ -16,10 +16,10 @@ docker-compose up -d
 
 Reiniciamos el Docker
 ```
-docker-compose restart odoo10
+docker-compose restart odoo
 ```
 
 Vemos los logs de Odoo
 ```
-docker-compose logs -f odoo10
+docker-compose logs -f odoo
 ```
