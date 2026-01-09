@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.8"
 
 services:
   db:
@@ -15,7 +15,9 @@ services:
     restart: unless-stopped
 
   odoo:
-    image: odoo:10.0
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: odoo10
     depends_on:
       - db
