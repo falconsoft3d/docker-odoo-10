@@ -1,4 +1,5 @@
-# docker-odoo-10
+# Docker Odoo 10.0
+Como instalar Odoo version 10.0
 
 # Instalar Docker Compose
 ```
